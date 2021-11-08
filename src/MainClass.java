@@ -1,5 +1,5 @@
 import java.sql.*;
-public class ReturnConn {
+public class MainClass {
     public static void main(String args[]) throws SQLException {
         Connection conn = null;
         jdbc_Connect_Class conn_obj;

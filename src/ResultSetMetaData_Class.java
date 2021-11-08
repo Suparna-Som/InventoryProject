@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class Main_Class{
+public class ResultSetMetaData_Class {
     public static void main(String args[]) throws SQLException {
         Connection conn = null;
         jdbc_Connect_Class obj;
