@@ -9,7 +9,9 @@ public class Main_Class{
             conn = obj.connect();
             Statement stmt = conn.createStatement();
             ResultSet result = stmt.executeQuery("Select * from student_detail");
+
             ResultSetMetaData rsmd = result.getMetaData();
+
             System.out.println("Total Columns : "+rsmd.getColumnCount());
             System.out.println("Column Name of 1st Column :"+rsmd.getColumnName(1));
             System.out.println("Column Type Name of 2nd Column : "+rsmd.getColumnTypeName(2));

@@ -2,10 +2,10 @@ import java.sql.*;
 public class ReturnConn {
     public static void main(String args[]) throws SQLException {
         Connection conn = null;
-        jdbc_Connect_Class obj;
+        jdbc_Connect_Class conn_obj;
         try{
-            obj = new  jdbc_Connect_Class();
-            conn = obj.connect();
+            conn_obj = new  jdbc_Connect_Class();
+            conn = conn_obj.connect();
             Statement stmt = conn.createStatement();
             ResultSet result =stmt.executeQuery("Select * from student_detail");
             while(result.next()){

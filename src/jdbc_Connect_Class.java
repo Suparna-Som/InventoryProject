@@ -5,10 +5,10 @@ import java.sql.SQLException;
 public class jdbc_Connect_Class {
     public static Connection connect(){
         Connection conn = null;
-         Credentials obj1=new Credentials();
-         String DB_URL = obj1.url;
-         String USER = obj1.user;
-         String PASS = obj1.pass;
+         Credentials cerdential_obj=new Credentials();
+         String DB_URL = cerdential_obj.url;
+         String USER = cerdential_obj.user;
+         String PASS = cerdential_obj.pass;
          try{
             conn = DriverManager.getConnection(DB_URL,USER,PASS);
             }
