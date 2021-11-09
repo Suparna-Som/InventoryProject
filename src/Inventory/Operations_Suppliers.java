@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.sql.*;
 
 
-public class Operations {
+public class Operations_Suppliers {
 
     public static String City;
     public static String Suppliers_Name;
@@ -20,7 +20,7 @@ public class Operations {
 
     jdbc_Connect_Class conn_obj;
 
-    Query query_obj;
+    Query_Suppliers query_Suppliers_obj;
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     public void insert_func() throws IOException {
 
@@ -51,9 +51,9 @@ public class Operations {
 
            try {
                 conn_obj = new jdbc_Connect_Class();
-                query_obj = new Query();
+                query_Suppliers_obj = new Query_Suppliers();
                 conn = conn_obj.connect();
-                PreparedStatement stmt = conn.prepareStatement(query_obj.insert);
+                PreparedStatement stmt = conn.prepareStatement(query_Suppliers_obj.insert);
 
                 stmt.setString(1, Suppliers_Id);
                 stmt.setString(2, Suppliers_Name);
@@ -75,10 +75,10 @@ public class Operations {
         public void select_fun(){
             try {
                 conn_obj = new jdbc_Connect_Class();
-                query_obj = new Query();
+                query_Suppliers_obj = new Query_Suppliers();
                 conn = conn_obj.connect();
                 Statement stmt = conn.createStatement();
-                ResultSet result =stmt.executeQuery(query_obj.select);
+                ResultSet result =stmt.executeQuery(query_Suppliers_obj.select);
                 while(result.next()){
                     System.out.println(result.getString("Suppliers_Id")+" "+result.getString("Suppliers_Name")+" "+result.getString("City")+" "+result.getString("Phone")+" "+result.getString("Product_Id")+" "+result.getInt("Qantity")+" "+result.getInt("Rate")+" "+result.getInt("Amount"));
                 }
@@ -95,9 +95,9 @@ public class Operations {
                 Suppliers_Id = br.readLine();
                 try {
                     conn_obj = new jdbc_Connect_Class();
-                    query_obj = new Query();
+                    query_Suppliers_obj = new Query_Suppliers();
                     conn = conn_obj.connect();
-                    PreparedStatement stmt = conn.prepareStatement(query_obj.update);
+                    PreparedStatement stmt = conn.prepareStatement(query_Suppliers_obj.update);
                     stmt.setString(1, Suppliers_Name);
                     stmt.setString(2, Suppliers_Id);
                     stmt.executeUpdate();
@@ -115,9 +115,9 @@ public class Operations {
                 Suppliers_Id = br.readLine();
                 try {
                     conn_obj = new jdbc_Connect_Class();
-                    query_obj = new Query();
+                    query_Suppliers_obj = new Query_Suppliers();
                     conn = conn_obj.connect();
-                    PreparedStatement stmt = conn.prepareStatement(query_obj.delete);
+                    PreparedStatement stmt = conn.prepareStatement(query_Suppliers_obj.delete);
                     stmt.setString(1, Suppliers_Id);
                     stmt.executeUpdate();
                     System.out.println("Successfully record deleted");
