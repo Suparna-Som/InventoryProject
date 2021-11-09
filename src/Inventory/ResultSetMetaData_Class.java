@@ -1,3 +1,4 @@
+package Inventory;
 import java.sql.*;
 
 public class ResultSetMetaData_Class {
